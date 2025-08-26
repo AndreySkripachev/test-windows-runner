@@ -44,8 +44,3 @@ jobs:
 
     - name: Extract GTK2
       run: '7z x public/gtk+-bundle_2.22.1-20101229_win64.zip -oC:\GTK'
-
-    - name: Get version from Git and update .NET projects
-      id: gitversion
-      uses: Saritasa/github-actions/generate-version@0.3.4
-
