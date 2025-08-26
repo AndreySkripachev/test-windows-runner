@@ -1,0 +1,51 @@
+
+name: test
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-2022
+    environment: dev
+    
+    steps:
+    #### Source code
+    - name: Checkout Source
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    #### Dependencies
+
+    - name: Install Node
+      uses: actions/setup-node@v2
+      with:
+        node-version: 20
+
+    - name: Install psake
+      uses: crazy-max/ghaction-chocolatey@v1
+      with:
+        args: install psake --version=4.7.3
+
+    - name: Install libjpeg-turbo
+      run: |
+        Invoke-WebRequest -Uri 'https://iwim2public.blob.core.windows.net/build/libjpeg-turbo-2.1.3-vc64.exe' -OutFile libjpeg-turbo-2.1.3-vc64.exe
+        ls
+        .\libjpeg-turbo-2.1.3-vc64.exe /S
+
+
+    # https://github.com/Automattic/node-canvas/wiki/Installation:-Windows
+    - name: Download GTK2
+      uses: suisei-cn/actions-download-file@v1
+      with:
+        url: "https://iwim2public.blob.core.windows.net/build/gtk+-bundle_2.22.1-20101229_win64.zip"
+        target: public/
+
+    - name: Extract GTK2
+      run: '7z x public/gtk+-bundle_2.22.1-20101229_win64.zip -oC:\GTK'
+
+    - name: Get version from Git and update .NET projects
+      id: gitversion
+      uses: Saritasa/github-actions/generate-version@0.3.4
+
