@@ -10,6 +10,7 @@ jobs:
     environment: dev
     
     steps:
+
     #### Source code
     - name: Checkout Source
       uses: actions/checkout@v2
@@ -45,7 +46,5 @@ jobs:
     - name: Extract GTK2
       run: '7z x public/gtk+-bundle_2.22.1-20101229_win64.zip -oC:\GTK'
     - name: Show tree
-      run: 'tree "C:\Program Files (x86)\Microsoft Visual Studio 14.0"'
+      run: 'tree "C:\Program Files (x86)\Windows Kits\10"'
 
-    - name: Install 
-      run: 'npm ci'
