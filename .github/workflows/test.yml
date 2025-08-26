@@ -44,3 +44,6 @@ jobs:
 
     - name: Extract GTK2
       run: '7z x public/gtk+-bundle_2.22.1-20101229_win64.zip -oC:\GTK'
+
+    - name: Show tree
+      run: 'tree "C:\Program Files"'
