@@ -70,9 +70,7 @@
     "signature_pad": "^3.0.0-beta.4",
     "tslib": "^2.0.0",
     "uuid": "^11.1.0",
-    "zone.js": "~0.15.0"
-  },
-  "optionalDependencies": {
+    "zone.js": "~0.15.0",
     "@nodert-win10-21h1/windows.devices.geolocation": "^0.1.6"
   },
   "devDependencies": {
