@@ -55,7 +55,7 @@ jobs:
         New-Item -Path "C:\Program Files (x86)\Microsoft Visual Studio 17.0\VC\lib" -ItemType Directory
         New-Item -Path "C:\Program Files (x86)\Microsoft Visual Studio 17.0\VC\lib\store" -ItemType Directory
         New-Item -Path "C:\Program Files (x86)\Microsoft Visual Studio 17.0\VC\lib\store\references" -ItemType Directory
-        Copy-Item 'C:\Program Files (x86)\Windows Kits\10\UnionMetadata\10.0.26100.0\Windows.winmd' -Destination 'C:\Program Files (x86)\Microsoft Visual Studio 17.0\VC\lib\store\references\Windows.winmd'
+        Copy-Item 'C:\Program Files (x86)\Windows Kits\10\UnionMetadata\10.0.17763.0\Windows.winmd' -Destination 'C:\Program Files (x86)\Microsoft Visual Studio 17.0\VC\lib\store\references\Windows.winmd'
     
     - name: Show MVS 17
       run: 'tree "C:\Program Files (x86)\Microsoft Visual Studio 17.0\VC\lib" /F'
