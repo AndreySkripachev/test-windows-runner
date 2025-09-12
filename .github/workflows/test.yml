@@ -61,5 +61,7 @@ jobs:
       run: 'tree "C:\Program Files (x86)\Microsoft Visual Studio 17.0\VC\lib" /F'
 
     - name: Install
-      run: 'npm i'
+      run: |
+        set LIBPATH=C:\Program Files (x86)\Windows Kits\10\References\10.0.17763.0\
+        npm i
 
