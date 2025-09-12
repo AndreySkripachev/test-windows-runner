@@ -70,7 +70,7 @@
     "tslib": "^2.0.0",
     "uuid": "^11.1.0",
     "zone.js": "~0.15.0",
-    "@nodert-win10-rs4/windows.devices.geolocation": "^0.1.6"
+    "@nodert-win10-21h1/windows.devices.geolocation": "^0.1.6"
   },
   "devDependencies": {
     "@angular-builders/custom-webpack": "^19.0.0",
