@@ -46,6 +46,16 @@ jobs:
     - name: Extract GTK2
       run: '7z x public/gtk+-bundle_2.22.1-20101229_win64.zip -oC:\GTK'
 
+    - name: Test
+      run: |
+        cd 'C:\Program Files (x86)\Microsoft Visual Studio\Installer'
+        dir
+
+    - name: Install Microsoft VC tools
+      run: |
+        'C:\Program Files (x86)\Microsoft Visual Studio\Installer\vs_installer.exe' modify --installPath "C:\Program Files (x86)\Microsoft Visual Studio\2022\Community" --add Microsoft.VisualStudio.ComponentGroup.UWP.VC  --add Microsoft.VisualStudio.Component.Windows10SDK.17134  --quiet --norestart --wait
+
+
     - name: Show tree
       run: 'tree "C:\Program Files (x86)\Windows Kits\10\UnionMetadata" /F'
     
