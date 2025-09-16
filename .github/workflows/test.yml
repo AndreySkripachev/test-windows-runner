@@ -57,7 +57,7 @@ jobs:
         .\vs_installer.exe modify --installPath "C:\Program Files (x86)\Microsoft Visual Studio\2022\Community" --add Microsoft.VisualStudio.ComponentGroup.UWP.VC  --add Microsoft.VisualStudio.Component.Windows10SDK.17134  --quiet --norestart --wait
 
     - name: Check exit code
-      run: echo "Last command exit code: $LASTEXITCODE"
+      run: 'echo "Last command exit code: $LASTEXITCODE"'
       shell: pwsh
     
     - name: Show tree
