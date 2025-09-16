@@ -62,7 +62,10 @@ jobs:
       shell: pwsh
     
     - name: Show tree
-      run: 'tree "C:\Program Files (x86)\Windows Kits\10\UnionMetadata" /F'
+      run: |
+        tree "C:\Program Files (x86)\Microsoft SDKs\Windows" /F
+        tree "C:\Program Files (x86)\Windows Kits\10\UnionMetadata" /F
+        tree "C:\Program Files\Microsoft SDKs\Windows"
     
     - name: Copy a to b
       run: |
